@@ -7,7 +7,7 @@ all: $(PROGRAMS)
 
 %: %.c
 	echo "compiling"
-	$(CC) -o $@ $^ -lfl
+	$(CC) -o $@ $^ -lfl `pkg-config --cflags --libs glib-2.0`
 
 %.c: %.lex
 	echo "lexing"
