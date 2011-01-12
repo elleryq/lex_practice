@@ -1,9 +1,17 @@
 LEX=flex
+CC=gcc
 
-all: p1
+PROGRAMS=p1 p2
 
-p1: p1.c
-    $(CC) -o $@ $^
+all: $(PROGRAMS)
 
-p1.c: p1.lex
+%: %.c
+	echo "compiling"
+	$(CC) -o $@ $^ -lfl
+
+%.c: %.lex
+	echo "lexing"
 	$(LEX) -o $@ $^
+
+clean:
+	rm -f $(PROGRAMS)
