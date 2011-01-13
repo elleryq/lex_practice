@@ -1,8 +1,10 @@
 LEX=flex
 YACC=bison
 CC=gcc
+#VERBOSE=-v
+VERBOSE=
 
-PROGRAMS=p1 p2 p3 p1-4y
+PROGRAMS=p1 p2 p3 p1-4y p1-5y
 
 all: $(PROGRAMS)
 
@@ -18,7 +20,7 @@ all: $(PROGRAMS)
 	$(LEX) -o $@ $^
 
 %_yacc.c: %.y
-	$(YACC) -o $@ --defines=y.tab.h $^
+	$(YACC) $(VERBOSE) -o $@ --defines=y.tab.h $^
 
 %.c: %.lex
 	echo "lexing"
