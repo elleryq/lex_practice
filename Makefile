@@ -4,7 +4,7 @@ CC=gcc
 #VERBOSE=-v
 VERBOSE=
 
-PROGRAMS=p1 p2 p3 p1-4y p1-5y
+PROGRAMS=p1 p2 p3 p1-4y p1-5y ch2-03
 
 all: $(PROGRAMS)
 
